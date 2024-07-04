@@ -1,24 +1,24 @@
-## Evaluating publicly available bengali LLM
+# Evaluating publicly available bengali LLM
 
-# How to Use:
+## How to Use:
 https://huggingface.co/asif00/bangla-llama
 
 You can use the model with a pipeline for a high-level helper or load the model directly. Here's how:
 
 ```python
-# Use a pipeline as a high-level helper
+## Use a pipeline as a high-level helper
 from transformers import pipeline
 pipe = pipeline("text-generation", model="asif00/bangla-llama") 
 ```
 
 ```python
-# Load model directly
+## Load model directly
 from transformers import AutoTokenizer, AutoModelForCausalLM
 tokenizer = AutoTokenizer.from_pretrained("asif00/bangla-llama")
 model = AutoModelForCausalLM.from_pretrained("asif00/bangla-llama")
 ```
 
-# General Prompt Structure: 
+## General Prompt Structure: 
 
 ```python
 prompt = """Below is an instruction in Bengali language that describes a task, paired with an input also in Bengali language that provides further context. Write a response in Bengali language that appropriately completes the request.
@@ -34,7 +34,7 @@ prompt = """Below is an instruction in Bengali language that describes a task, p
 """
 ```
 
-# To get a cleaned up version of the response, you can use the `generate_response` function:
+## To get a cleaned up version of the response, you can use the `generate_response` function:
 
 ```python
 def generate_response(question, context):
@@ -46,7 +46,7 @@ def generate_response(question, context):
     return response
 ```
 
-# Example Usage:
+## Example Usage:
 
 ```python
 question = "ভারতীয় বাঙালি কথাসাহিত্যিক মহাশ্বেতা দেবীর মৃত্যু কবে হয় ?"
@@ -55,13 +55,3 @@ answer = generate_response(question, context)
 print(answer)
 ```
 
-# Fine-tuning script:
-I have added the original script used for finetuning so you can replicate it. Find the `finetune` script here: [finetune.ipynb](finetune.ipynb)
-
-# Disclaimer:
-
-The Bangla LLaMA-4bit model has been trained on a limited dataset, and its responses may not always be perfect or accurate. The model's performance is dependent on the quality and quantity of the data it has been trained on. Given more resources, such as high-quality data and longer training time, the model's performance can be significantly improved.
-
-
-# Resources: 
-Work in progress...
