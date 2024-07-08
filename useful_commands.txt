@@ -1,0 +1,3 @@
+phisonai --num_gpus 1 --model_name_or_path /home/phison/Desktop/llm/Meta-Llama-3-8B-HF --data_path iamshnoo/alpaca-cleaned-bengali --nvme_path /media/user/nvme0 --per_device_train_batch_size 14 --per_update_total_batch_size 560 --num_train_epochs 1 --output_dir /home/phison/Desktop/llm/result/
+python /home/phison/miniconda3/envs/phison/lib/python3.10/site-packages/transformers/models/llama/convert_llama_weights_to_hf.py --input_dir /home/phison/Desktop/llm/Meta-Llama-3-8B/original --output_dir /home/phison/Desktop/llm/Meta-Llama-3-8B-HF --llama_version 3 --model_size 8B
+pip install huggingface-hub==0.17.3 tokenizers==0.14.1 transformers==4.35.2
