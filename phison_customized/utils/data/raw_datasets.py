@@ -120,3 +120,36 @@ class AlpacaDataset(PromptRawDataset):
     def get_prompt_and_chosen(self, sample):
         return sample['text']
 
+class AlpacaDatasetBN(PromptRawDataset):
+
+    def __init__(self, output_path, seed, local_rank, dataset_name):
+        super().__init__(output_path, seed, local_rank, dataset_name)
+        self.dataset_name = "iamshnoo/alpaca-cleaned-bengali"
+        self.dataset_name_clean = "iamshnoo_alpaca_cleaned_bengali"
+
+    def make_prompt(self, sample):
+        prompt = """Below is an instruction in Bengali language that describes a task, paired with an input also in Bengali language that provides further context. Write a response in Bengali language that appropriately completes the request.
+
+        ### Instruction:
+        {}
+
+        ### Input:
+        {}
+
+        ### Response:
+        {}
+        """
+        text = prompt.format(sample['instruction'], sample['input'], sample['output'])
+        return text
+
+    def get_train_data(self):
+        return self.raw_datasets["train"]
+
+    def get_eval_data(self):
+        return random.sample(list(self.raw_datasets["train"]), 1)
+
+
+    def get_prompt_and_chosen(self, sample):
+        return self.make_prompt(sample)
+        #return sample['text']
+

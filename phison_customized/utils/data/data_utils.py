@@ -27,6 +27,9 @@ def get_raw_dataset(dataset_name, output_path, seed, local_rank):
     if "Dahoas/rm-static" in dataset_name :
         return raw_datasets.DahoasRmstaticDataset(output_path, seed,
                                                   local_rank, dataset_name)
+    elif "iamshnoo/alpaca-cleaned-bengali" in dataset_name :
+        return raw_datasets.AlpacaDatasetBN(output_path, seed,
+                                                  local_rank, dataset_name)
     elif "pretrain" in dataset_name:
         print("load pretrain dataset")
         return raw_datasets.PretrainDataset(output_path, seed, local_rank,
