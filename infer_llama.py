@@ -12,7 +12,8 @@ from accelerate.utils import load_checkpoint_in_model
 #model_id = "/home/phison/Desktop/llm/Llama-2-70b-chat-hf"
 #model_id = "/home/phison/Desktop/llm/result/finetuned_model_2024-07-03-13-20-10/epoch_0_step_924_#Llama-2-70b-hf"
 #model_id = "/home/phison/Desktop/llm/result/finetuned_model_2024-07-05-23-51-51/epoch_0_step_1848_#Llama-2-7b-hf"
-model_id = "/home/phison/Desktop/llm/result/finetuned_model_2024-07-07-04-15-31/epoch_0_step_924_#Llama-2-7b-chat-hf"
+#model_id = "/home/phison/Desktop/llm/result/finetuned_model_2024-07-07-04-15-31/epoch_0_step_924_#Llama-2-7b-chat-hf"
+model_id = ""
 
 #model_id = "/home/phison/Desktop/llm/Meta-Llama-3-8B-HF"
 #model_id = "/home/phison/Desktop/llm/Meta-Llama-3-8B-Instruct"
